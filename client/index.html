@@ -13,7 +13,16 @@
 </head>
 <body>
 	<div class="fixed-content-wrapper">
-		<section id="header-container">
+		<section id="header-container" ng-controller="navCtrl as vm">
+			<nav role="navigation">
+				<ul>
+					<li>HOME</li>
+					<li>ABOUT</li>
+					<li>PORTFOLIO</li>
+					<li>SKILLS</li>
+					<li>CONTACT</li>
+				</ul>
+			</nav>
 			<header ng-class="{ 'home-header' : vm.currentUrl('/'), 'about-header' : vm.currentUrl('/about'),'portfolio-header' : vm.currentUrl('/portfolio'), 'skills-header' : vm.currentUrl('/skills'), 'contact-header' : vm.currentUrl('/contact') }">
 
 				<div class="header-content" ng-if="vm.currentUrl('/')">
@@ -22,7 +31,7 @@
 				</div>
 				<div class="header-content" ng-if="vm.currentUrl('/about')">
 					<h1 class="title-heading">About Me</h1>
-					<h3>Blu blu </h3>
+					<h3>Blu blu</h3>
 	<!-- 				<p class="intro-heading">Full Stack Developer</p> -->
 				</div>
 				<div class="header-content" ng-if="vm.currentUrl('/portfolio')">
