@@ -1,3 +1,4 @@
+console.log(halua);
 (function (angular){
 		.module('portfolioApp')
 		.config(routes);

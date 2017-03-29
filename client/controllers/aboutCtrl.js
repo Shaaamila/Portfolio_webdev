@@ -1,5 +1,5 @@
 (function (angular){
-
+	angular
 	.module('portfolioApp')
 	.controller('aboutCtrl');
 
