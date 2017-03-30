@@ -100,3 +100,35 @@ console.log('halua');
 		var vm = this;
 	}
 } ) (angular);
+
+
+
+(function (angular){	
+	angular
+		.module('portfolioApp')
+		.controller('portfolioCtrl',portfolioCtrl);
+
+	function portfolioCtrl($scope, $location){
+		var vm = this;
+	}
+} ) (angular);
+
+(function (angular){	
+	angular
+		.module('portfolioApp')
+		.controller('skillsCtrl',skillsCtrl);
+
+	function skillsCtrl($scope, $location){
+		var vm = this;
+	}
+} ) (angular);
+
+(function (angular){	
+	angular
+		.module('portfolioApp')
+		.controller('contactCtrl',contactCtrl);
+
+	function contactCtrl($scope, $location){
+		var vm = this;
+	}
+} ) (angular);

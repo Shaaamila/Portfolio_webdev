@@ -18,14 +18,15 @@
 				<ul>
 					<!--  -->
 <!-- 					<li ui-sref-active= "active" ng-class={'inactive' : vm.currentUrl('/') === false}><a ui-sref="home">HOME</a></li> -->
-					<li><a ui-sref="home" href="#/home">HOME</a></li>
-					<li><a ui-sref="about" href="#/about">ABOUT</a></li>
-					<li><a ui-sref="portfolio">PORTFOLIO</a></li>
-					<li><a ui-sref="skills">SKILLS</a></li>
-					<li><a ui-sref="contact">CONTACT</a></li>
+					<!-- <li ng-class="{active: isActive('/')}"><a ui-sref="home" href="#/home">HOME</a></li> -->
+					<li class="one"><a ui-sref="home" href="#/home">HOME</a></li>
+					<li class="two"><a ui-sref="about" href="#/about">ABOUT</a></li>
+					<li class="three"><a ui-sref="portfolio">PORTFOLIO</a></li>
+					<li class="four"><a ui-sref="skills">SKILLS</a></li>
+					<li class="five"><a ui-sref="contact">CONTACT</a></li>
 				</ul>
 			</nav>
-			<header ng-class="{ 'home-header' : vm.currentUrl('/'), 'about-header' : vm.currentUrl('/about'),'portfolio-header' : vm.currentUrl('/portfolio'), 'skills-header' : vm.currentUrl('/skills'), 'contact-header' : vm.currentUrl('/contact') }">
+			<header ng-class="{'home-header' : vm.currentUrl('/'), 'about-header' : vm.currentUrl('/about'),'portfolio-header' : vm.currentUrl('/portfolio'), 'skills-header' : vm.currentUrl('/skills'), 'contact-header' : vm.currentUrl('/contact') }">
 
 				<div class="header-content" ng-if="vm.currentUrl('/')">
 					<h1 class="title-heading">Hi I am Shamila</h1>

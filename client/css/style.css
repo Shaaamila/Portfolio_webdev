@@ -87,28 +87,91 @@ nav {
   z-index: 9999;
   text-transform: uppercase; }
 
+/*.navbar {
+    background-color: #eee ! important;
+}*/
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   /*		float: right;*/
   text-align: center; }
-  ul .active {
-    background: #0d0d0d;
-    border-bottom: 3px solid #9358fe; }
-  ul .inactive:hover {
-    background: #262626; }
-  ul li {
-    display: inline-block;
-    padding: 150px 80px 0px 80px;
-    /*		float: center;*/
-    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+li {
+  display: inline-block;
+  padding: 150px 80px 0px 80px;
+  /*		float: center;*/
+  font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  font-size: 1.7em; }
+
+a {
+  /*font-size: 80em;*/
+  color: white;
+  text-decoration: none;
+  /*		&:hover, &:link, &:active {
+  		
+  		border-bottom: white; 
+  	}*/ }
+
+.two:hover ~ hr {
+  margin-left: 25%; }
+
+.three:hover ~ hr {
+  margin-left: 50%; }
+
+.four:hover ~ hr {
+  margin-left: 75%; }
+
+hr {
+  height: .25rem;
+  width: 25%;
+  margin: 0;
+  background: red;
+  border: none;
+  transition: .3s ease-in-out; }
+
+.container-fluid.skills {
+  padding: 2%;
+  color: black;
+  /*	.row {
+  		padding: 2%
+  	}*/ }
+  .container-fluid.skills h1 {
     color: white;
-    font-size: 1.7em; }
-  ul a {
-    /*font-size: 80em;*/ }
-    ul a:visited, ul a:hover, ul a:link, ul a:active {
-      text-decoration: none;
-      color: white; }
+    text-align: center;
+    margin: 1% auto; }
+  .container-fluid.skills .skills-box {
+    /*		padding: 0.5%;*/
+    border: 8px solid #03396c;
+    /*		background-color: #005b96;*/
+    margin: .5%;
+    text-align: center; }
+  .container-fluid.skills .icon {
+    height: 130px;
+    border-bottom: 2px solid #03396c;
+    text-align: center;
+    background-color: #6497b1; }
+  .container-fluid.skills img {
+    height: 130px; }
+  .container-fluid.skills .language {
+    height: auto;
+    background-color: #005b96; }
+
+.container-fluid.contact {
+  padding: 5%;
+  color: black; }
+  .container-fluid.contact .contact-box {
+    margin: 2%; }
+  .container-fluid.contact .contact-me {
+    border: 2px solid pink; }
+  .container-fluid.contact .info-box {
+    margin: 2%;
+    padding: 1.5%;
+    border: 6px solid #03396c;
+    background-color: #005b96; }
+
+/*
+} */
 
 /*# sourceMappingURL=style.css.map */

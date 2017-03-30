@@ -1,0 +1,13 @@
+SCSS
+
+		.active &:hover{
+			&:hover {
+			color: #fff;	
+			border-bottom-color: 3px solid #fff;
+		}
+	}
+		background: darken(#333, 15%);
+
+		.inactive {
+				background: lighten(black, 15%);
+			}
