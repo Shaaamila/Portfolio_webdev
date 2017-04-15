@@ -11,48 +11,64 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 <style type="text/css"></style>
 </head>
 <body>
 	<div class="fixed-content-wrapper">
-		<section id="header-container" ng-controller="navCtrl as vm">
+		<header>
+		<section id="header-container" ng-controller="navCtrl as vm" ng-cloak>
 			<nav role="navigation">
 				<ul>
-					<!--  -->
+				
 <!-- 					<li ui-sref-active= "active" ng-class={'inactive' : vm.currentUrl('/') === false}><a ui-sref="home">HOME</a></li> -->
 					<!-- <li ng-class="{active: isActive('/')}"><a ui-sref="home" href="#/home">HOME</a></li> -->
 					<li class="one"><a ui-sref="home" href="#/home">HOME</a></li>
-					<li class="two"><a ui-sref="about" href="#/about">ABOUT</a></li>
+<!-- 					<li class=""><a ui-sref="about" href="#about">ABOUT</a></li> -->
+					<li class="two"><a href="" ui-sref="about" ng-click="scrollTo('about')">ABOUT</a></li>
 					<li class="three"><a ui-sref="portfolio">PORTFOLIO</a></li>
 					<li class="four"><a ui-sref="skills">SKILLS</a></li>
 					<li class="five"><a ui-sref="contact">CONTACT</a></li>
 				</ul>
 			</nav>
-			<header ng-class="{'home-header' : vm.currentUrl('/'), 'about-header' : vm.currentUrl('/about'),'portfolio-header' : vm.currentUrl('/portfolio'), 'skills-header' : vm.currentUrl('/skills'), 'contact-header' : vm.currentUrl('/contact') }">
+			</section>
+		</header>
+<!-- 			<header ng-class="{'home-header' : vm.currentUrl('/')}">
 
 				<div class="header-content" ng-if="vm.currentUrl('/')">
 					<h1 class="title-heading">Hi I am Shamila</h1>
 					<h3 class="intro-heading">Full Stack Developer</h3>
 				</div>
-				<div class="header-content" ng-if="vm.currentUrl('/about')">
-					<h3 class="title-heading">About Me</h3>
-					<h1 class="intro-heading">Here is a glimpse into my coder-life ;)</h1>
-				</div>
-				<div class="header-content" ng-if="vm.currentUrl('/portfolio')">
-					<h3 class="title-heading">PORTFOLIO</h3>
-					<h1 class="intro-heading">My Projects</h1>
-				</div>
-				<div class="header-content" ng-if="vm.currentUrl('/skills')">
-					<h3 class="title-heading">Skills</h3>
-					<h1 class="intro-heading">Few of my skills</h1>
-				</div>
-				<div class="header-content" ng-if="vm.currentUrl('/contact')">
-					<h3 class="title-heading">Contact</h3>
-					<h1 class="intro-heading">Contact me</h1>
-				</div>
-			</header>
-		</section>
+	
+			</header> -->
+		
 		<main ui-view role="main">
+
+			<div>
+		<div class="container-fluid home">
+			<h1 class="title-heading">Shamila Mosharraf</h1>
+			<h3 class="intro-heading">Full   Stack   Developer</h3>
+		</div>
+
+			</div>
+		
+		<!-- <a name="about"> -->
+		<div id="about" >
+			<div class="container-fluid about">
+		<!-- 		<h1 class="about-heading">About Me</h1> -->
+				<div class="row">
+					<div class="col-xs-6" id="about-box">
+						<h2 class="about-intro">About Me</h2>
+						<p class="about-para">I am a web developer, so I know how to create your website to run across devices using the latest technologies available.</p>
+					</div>
+					<div class="col-xs-6">
+						<div >
+							<img class="picture" src="content/img/mypic.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- </a> -->
 		</main>
 		<footer>
 			<div class="row">
@@ -69,7 +85,6 @@
 				<ul>
 					<li><i class="fa fa-copyright" aria-hidden="true"></i>   Copyright 2017 Shamila Mosharraf</li>
 				</ul>
-				<h4>Copyright 2017 Shamila Moshrraf</h4>
 			</div>
 		</footer>
 	</div>
@@ -80,3 +95,6 @@
 	<script src="all.js"></script>
 </body>
 </html>
+
+<!-- 
+ -->

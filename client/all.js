@@ -18,8 +18,8 @@
 				controllerAs: 'vm'
 			})
 			.state('about',{
-				url: '/about',
-				templateUrl: '/partials/about.html',
+				// url: '/about',
+				// templateUrl: '#about',
 				controller: 'aboutCtrl',
 				controllerAs: 'vm'
 			})
@@ -63,7 +63,12 @@ console.log('halua');
 		.controller('navCtrl', navCtrl);
 
 //$rootscope,
-	function navCtrl ($rootScope, $scope, $location){
+	function navCtrl ($rootScope, $scope, $location, $anchorScroll){
+			$scope.scrollTo = function(id){
+			$location.hash(id);
+			$anchorScroll();
+			console.log('directive anchor value:', scope.anchor);
+		}
 		var vm = this;
 
 		vm.currentUrl = currentUrl;
@@ -97,6 +102,7 @@ console.log('halua');
 	.controller('aboutCtrl', aboutCtrl);
 
 	function aboutCtrl($scope, $location){
+	
 		var vm = this;
 	}
 } ) (angular);

@@ -13,8 +13,8 @@ console.log(halua);
 				controllerAs: 'vm'
 			})
 			.state('about',{
-				url: '/about',
-				templateUrl: 'partials/about.html',
+				// url: '/about',
+				// templateUrl: '#about',
 				controller: 'aboutCtrl',
 				controllerAs: 'vm'
 			})
