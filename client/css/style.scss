@@ -833,6 +833,14 @@ md-toast.notification.md-top {
 	}
 }
 
+/*    iPhone 6 screen:  portrait and landscape    */
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
 
 
 
