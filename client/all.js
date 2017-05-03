@@ -1,6 +1,6 @@
 ( function (angular) {
 	angular
-		.module('portfolioApp', ['ui.router', 'ngAnimate']);
+		.module('portfolioApp', ['ui.router','ui.bootstrap','ngAnimate', 'ngMaterial']);
 } )(angular);
 
 (function (angular){
@@ -13,33 +13,65 @@
 		$stateProvider
 			.state('home',{
 				url: '/',
-				templateUrl: '/partials/home.html',
+				// templateUrl: '/partials/home.html',
 				controller: 'homeCtrl',
-				controllerAs: 'vm'
+				controllerAs: 'vm',
+				onEnter: function ($location, $stateParams, $anchorScroll, $timeout) {
+    				$timeout(function() { 
+      				$location.hash($stateParams.scrollTo);
+      				$anchorScroll()
+    				}, 100)
+    			}
 			})
 			.state('about',{
 				// url: '/about',
 				// templateUrl: '#about',
 				controller: 'aboutCtrl',
-				controllerAs: 'vm'
+				controllerAs: 'vm',
+				onEnter: function ($location, $stateParams, $anchorScroll, $timeout) {
+    				$timeout(function() { 
+      				$location.hash($stateParams.scrollTo);
+      				$anchorScroll()
+    				}, 100)
+    			}
 			})
+
+
 			.state('portfolio',{
-				url: '/portfolio',
-				templateUrl: 'partials/portfolio.html',
+				// url: '/portfolio',
+				// templateUrl: 'partials/portfolio.html',
 				controller: 'portfolioCtrl',
-				controllerAs: 'vm'
+				controllerAs: 'vm',
+				onEnter: function ($location, $stateParams, $anchorScroll, $timeout) {
+    				$timeout(function() { 
+      				$location.hash($stateParams.scrollTo);
+      				$anchorScroll()
+    				}, 100)
+    			}
 			})
 			.state('skills',{
-				url: '/skills',
-				templateUrl: 'partials/skills.html',
+				// url: '/skills',
+				// templateUrl: 'partials/skills.html',
 				controller: 'skillsCtrl',
-				controllerAs: 'vm'
+				controllerAs: 'vm',
+				onEnter: function ($location, $stateParams, $anchorScroll, $timeout) {
+    				$timeout(function() { 
+      				$location.hash($stateParams.scrollTo);
+      				$anchorScroll()
+    				}, 100)
+    			}
 			})
 			.state('contact',{
-				url: '/contact',
-				templateUrl: 'partials/contact.html',
+				// url: '/contact',
+				// templateUrl: 'partials/contact.html',
 				controller: 'contactCtrl',
-				controllerAs: 'vm'
+				controllerAs: 'vm',
+				onEnter: function ($location, $stateParams, $anchorScroll, $timeout) {
+    				$timeout(function() { 
+      				$location.hash($stateParams.scrollTo);
+      				$anchorScroll()
+    				}, 100)
+    			}
 			});
 		$compileProvider.debugInfoEnabled(false);
 	}
@@ -64,10 +96,12 @@ console.log('halua');
 
 //$rootscope,
 	function navCtrl ($rootScope, $scope, $location, $anchorScroll){
+
+			$scope.isCollapsed = true;
+
 			$scope.scrollTo = function(id){
 			$location.hash(id);
 			$anchorScroll();
-			console.log('directive anchor value:', scope.anchor);
 		}
 		var vm = this;
 
@@ -134,7 +168,52 @@ console.log('halua');
 		.module('portfolioApp')
 		.controller('contactCtrl',contactCtrl);
 
-	function contactCtrl($scope, $location){
+	function contactCtrl($scope, $http, $mdToast, $location){
 		var vm = this;
+
+		$scope.toastPosition = {
+			bottom : true,
+			top : false,
+			left : false,
+			right : true
+		};
+		$scope.getToastPosition = function(){
+			return Object.keys($scope.toastPosition)
+			.filter(function(pos){
+				return $scope.toastPosition[pos];
+			})
+			.join(' ');
+		};
+
+		this.sendMail = function(){
+			data = ({
+				contactName : this.contactName, 
+				contactEmail : this.contactEmail,
+				contactMsg : this.contactMsg
+			 })
+			console.log('luli');
+
+			// http setup
+			$http.post('/contact-form', data).
+				success(function(data, status, headers, config){
+
+			$mdToast.show(
+				$mdToast.simple()
+				.content('Thanks for your message'+ data.contactName +'. You rock!')
+				.position($scope.getToastPosition())
+				.hideDelay(5000)
+				);
+				// if (data == "sent"){
+				// 		$("#msg").empty().html("Your has been sent!");
+				// 	}
+
+				}).
+				error(function(data, status, headers, config){
+
+				});
+
+		};
 	}
 } ) (angular);
+
+

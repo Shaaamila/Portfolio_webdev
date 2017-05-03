@@ -4,11 +4,11 @@ console.log(halua);
 		.config(routes);
 
 	function routes($stateProvider, $urlRouterProvider, $compileProvider){
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/#/home');
 		$stateProvider
 			.state('home',{
-				url: '/',
-				templateUrl: 'partials/home.html',
+				// url: '/',
+				// templateUrl: 'partials/home.html',
 				controller: 'homeCtrl',
 				controllerAs: 'vm'
 			})
@@ -19,20 +19,20 @@ console.log(halua);
 				controllerAs: 'vm'
 			})
 			.state('portfolio',{
-				url: '/portfolio',
-				templateUrl: 'partials/portfolio.html',
+				// url: '/portfolio',
+				// templateUrl: 'partials/portfolio.html',
 				controller: 'portfolioCtrl',
 				controllerAs: 'vm'
 			})
 			.state('skills',{
-				url: '/skills',
-				templateUrl: 'partials/skills.html',
+				// url: '/skills',
+				// templateUrl: 'partials/skills.html',
 				controller: 'skillsCtrl',
 				controllerAs: 'vm'
 			})
 			.state('contact',{
-				url: '/contact',
-				templateUrl: 'partials/contact.html',
+
+
 				controller: 'contactCtrl',
 				controllerAs: 'vm'
 			});
