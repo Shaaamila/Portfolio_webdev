@@ -25,10 +25,6 @@ body {
   background: white;
   overflow: auto; }
 
-.navbar-toggle {
-  border: solid black 3px;
-  /*background-color: blue;*/ }
-
 .icon-bar {
   background-color: black; }
 
@@ -48,7 +44,7 @@ body {
 
 	}*/
 /*   Navbar starts   */
-.navbar {
+nav {
   width: 100%;
   height: 21%;
   z-index: 9999;
@@ -61,7 +57,7 @@ body {
   	text-align: center;
   /*	transition: background 2s ease-in-out,padding 2s ease-in-out;*/ }
 
-.navbar ul {
+nav ul {
   list-style-type: none;
   /*		width: 90%;*/
   margin: 0;
@@ -69,7 +65,7 @@ body {
   /*		float: right;*/
   text-align: center; }
 
-.navbar ul li {
+nav ul li {
   display: inline-block;
   margin: 60px 0px 0px 0px;
   padding: 27px 0px;
@@ -77,10 +73,10 @@ body {
   font-size: 1.7em;
   font-weight: 700; }
 
-.navbar a {
+nav a {
   color: black;
   padding: 27px 57px; }
-  .navbar a:hover {
+  nav a:hover {
     text-decoration: none;
     color: black;
     box-shadow: 0 0 0 5px black inset;
@@ -93,15 +89,37 @@ body {
 
 /*getting rid of &:focus (active page), as it does not show on the focused page  */
 /*   Navbar ends   */
+.goToTop {
+  position: fixed;
+  bottom: 10%;
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
+  right: 2%;
+  /*z-index: 100000;*/
+  cursor: pointer;
+  margin: 10px;
+  font-size: 2em;
+  -moz-opacity: 0.60;
+  opacity: .60;
+  filter: alpha(opacity=60);
+  /*without opacity the arrow is too bright*/
+  color: black;
+  background-color: white; }
+
 .container-fluid.home {
   height: 100vh;
   padding: 5%;
   color: black;
-  background: url("/content/img/cover1.png") center center no-repeat;
+  background: url("/content/img/cover1.png") center center no-repeat fixed;
   /*		background-size: cover;*/
   background-size: 100% 100%;
   text-align: center; }
 
+ /*   img {
+    	max-width:100%;
+
+    }*/
 .title-heading {
   font-family: 'Oregano', cursive;
   /*font-size: em(300);*/
@@ -593,17 +611,18 @@ h1 {
     border-color: transparent; }
     .container-fluid.contact .contact-form form textarea:focus {
       outline: none; }
-  .container-fluid.contact .contact-form #send_mail {
-    height: 3.1em;
+  .container-fluid.contact .contact-form .contact-button {
+    height: 1.9em;
     width: 20%;
     padding: 0%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
-    font-size: .8em;
+    font-size: 1.2em;
     text-align: center;
     border-radius: 5px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    /*pointer-events: none;*/ }
+    /*pointer-events: none;*/
+    background-color: #5DADE2; }
   .container-fluid.contact .contact-form hr {
     margin: 1px;
     border: 0;
@@ -658,5 +677,68 @@ md-toast.notification.md-top {
       color: #000; }
 
 /*    iPhone 6 screen:  portrait and landscape    */
+/*511 for scrn width toggle*/
+/*@media screen and (min-width: 320px) and (max-width: 767px)*/
+/*ipad width */
+@media all and (min-width: 320px) and (max-width: 768px) {
+  .col {
+    width: 100%; }
+
+  .navbar-toggle {
+    border: solid black 3px;
+    float: none;
+    margin: 0 40%; }
+
+  nav ul {
+    /*	display: none;*/
+    /*does not show on mobile screen*/ }
+
+  nav ul li, li a {
+    width: 100%;
+    /*the menu will be vertical, stretched to screen*/ }
+
+  /*	#header-container {
+  width: 100%;
+  height: 100%;
+  }*/
+ 	/*.home {
+ 		background-size: contain;
+
+ 	}*/
+  .home {
+    background: url("/content/img/cover1.png") center center no-repeat fixed;
+    webkit-background-size: cover contain;
+    -moz-background-size: cover contain;
+    -o-background-size: cover contain;
+    background-size: 100% 100%;
+    /*		        top: 0;
+        left: 0;*/
+    max-height: 100%;
+    max-width: 100%; }
+
+  .title-heading {
+    margin-top: 70%; }
+
+  .portfolio-list li {
+    width: 100%;
+    padding-bottom: 5.5em;
+    /*margin-bottom: 2.5em;*/ }
+
+  .container-fluid.portfolio {
+    height: auto;
+    padding: 2% 0%;
+    background-size: cover; }
+
+  .container-fluid.skills {
+    height: auto; }
+
+  .container-fluid.contact {
+    height: auto; }
+
+  .contact-form.col-md-6 {
+    width: 7em; }
+
+  .contact-button {
+    background-color: #2874A6; } }
 
 /*# sourceMappingURL=style.css.map */

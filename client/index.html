@@ -13,6 +13,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<!-- scroll-top button -->
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<style type="text/css"></style>
 
 </head>
@@ -35,22 +37,26 @@
 				</div>
 	
 			</header> -->
-		
+		<button class="goToTop"  ><i class="icon-chevron-up"></i></button>
+
 		<main ui-view role="main">
 
 <!-- Home page starts -->
 
 		<div id="home">
 		<div class="container-fluid home">
+
  			<section id="header-container">
-				<nav class="navbar" ng-controller="navCtrl as vm">
-				<div class="container-fluid"> <!-- keeps the navbar in a column -->
+
+				<nav ng-controller="navCtrl as vm">
+
+					<!-- <button class="navbar-toggle" data-toggle="collapse" ng-init="isCollapsed === true" ng-click="isCollapsed = !isCollapsed"> -->
 					<button class="navbar-toggle" data-toggle="collapse" ng-click="isCollapsed = !isCollapsed">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<div collapse="isCollapsed"> 
+					<div class="collapse navbar-collapse" collapse="isCollapsed"> 
 						<ul>
 							<li class="one "><a ui-sref="home" ng-click="scrollTo('home')" href="#home">HOME</a></li>
 							<li class="two"><a ui-sref="about" ng-click="scrollTo('about')" href="#about">ABOUT</a></li>
@@ -59,8 +65,9 @@
 							<li class="five "><a ui-sref="contact" ng-click="scrollTo('contact')" href="#contact">CONTACT</a></li>
 						</ul>
 					</div>
-				</div> 
+				<!-- </div> --> 
 				</nav>
+
 			</section>
 			
 			<div>
@@ -68,7 +75,7 @@
 				<h3 class="intro-heading">Full   Stack   Developer</h3>
 			</div>
 		</div>  <!-- div id="home" -->
-
+</div>
 <!-- Home page ends -->
 
 <!-- About me page starts -->		
@@ -98,7 +105,7 @@
 						</div>
 					</div>
 					
-					<ul>
+					<ul class="portfolio-list">
 						<li>
 							<div class="ch-item ch-img-1">				
 								<div class="ch-info-wrap">
@@ -181,8 +188,10 @@
 
 					</ul>	
 				</div>
-		</div>
+		</div>  <!-- id="portfolio" -->
+
 <!-- Porfolio page ends -->	
+
 
 <!-- Skills page starts -->		
 		<div id="skills">
@@ -391,7 +400,7 @@
 							    <input type="text" id="name" data-ng-model="vm.contactName" placeholder="Full Name" /><hr>
 							    <input type="email" id="email" data-ng-model="vm.contactEmail" placeholder="Your Email Address" /><hr>
 							    <textarea id="message" data-ng-model="vm.contactMsg" placeholder="Message"></textarea>
-							    <button id="send_mail" type="submit" class="btn btn-info" value="Send Message" ng-class="contact-form.$dirty && contact-form.$valid"/>SEND MESSAGE</button>
+							    <button class="contact-button" type="submit" value="Send Message" ng-class="contact-form.$dirty && contact-form.$valid"/>SEND</button>
 
 							    <span id="msg"></span>
 							  </form>
@@ -415,7 +424,9 @@
 					<li><a href="mailto:shamila.m09@gmail.com" title="mail" target="_blank"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a></li>
 
 					<li><a href="https://www.facebook.com/shamila.mosharraf" title="facebook" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
-					<li class="resume_link"><a href="/content/resume/resume.pdf" title="resume" target="_blank"><img src="/content/img/resume_button.png"></a></li>
+					<!-- <li class="resume_link"><a href="/content/resume/resume.pdf" title="resume" target="_blank"><img src="/content/img/resume_button.png"></a></li> -->
+					<li class="resume_link"><a href="/content/resume/resume.pdf" title="resume" download><img src="/content/img/resume_button.png"></a></li>
+				<!-- 	<a href="/images/myw3schoolsimage.jpg" download> -->
 					
 				</ul>
 			</div>
@@ -444,6 +455,12 @@
 <script src="smooth_scroll.js"></script>
 
 <!--   needed for smooth scrolling -->
+
+<!-- more -->
+<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="smoothscroll.js"></script> -->
+
+<!-- more -->
 <script src="all.js"></script>
 
 </body>

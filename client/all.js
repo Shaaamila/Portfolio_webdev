@@ -16,15 +16,15 @@
 				// templateUrl: '/partials/home.html',
 				controller: 'homeCtrl',
 				controllerAs: 'vm',
-				onEnter: function ($location, $stateParams, $anchorScroll, $timeout) {
-    				$timeout(function() { 
-      				$location.hash($stateParams.scrollTo);
-      				$anchorScroll()
-    				}, 100)
-    			}
+				// onEnter: function ($location, $stateParams, $anchorScroll, $timeout) {
+    // 				$timeout(function() { 
+    //   				$location.hash($stateParams.scrollTo);
+    //   				$anchorScroll()
+    // 				}, 100)
+    // 			}
 			})
-			.state('about',{
-				// url: '/about',
+			.state('about',{  
+				// url: '/about/:scrollTo',
 				// templateUrl: '#about',
 				controller: 'aboutCtrl',
 				controllerAs: 'vm',
@@ -32,8 +32,10 @@
     				$timeout(function() { 
       				$location.hash($stateParams.scrollTo);
       				$anchorScroll()
+      				console.log("hukiiii");
     				}, 100)
     			}
+
 			})
 
 
@@ -78,7 +80,8 @@
 
 
 }  ) (angular);
-console.log('halua');
+
+
 (function (angular){	
 	angular
 		.module('portfolioApp')
@@ -98,11 +101,19 @@ console.log('halua');
 	function navCtrl ($rootScope, $scope, $location, $anchorScroll){
 
 			$scope.isCollapsed = true;
+			
+			// $scope.scrollTo = function(id) {
+			// $location.hash(id);
+			// $anchorScroll();  //^this stopped working
 
-			$scope.scrollTo = function(id){
-			$location.hash(id);
-			$anchorScroll();
-		}
+			$scope.scrollTo = function (id) {
+    		var old = $location.hash();
+    		$location.hash(id);
+    		$anchorScroll();
+    		$location.hash(old);
+ 		}
+
+		
 		var vm = this;
 
 		vm.currentUrl = currentUrl;
